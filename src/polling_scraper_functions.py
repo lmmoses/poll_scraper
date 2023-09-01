@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -13,10 +7,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import logging
 
-
-# In[2]:
-
-
 # Define email settings for error notifications
 SMTP_SERVER = "your-smtp-server.com"
 SMTP_PORT = 587
@@ -25,16 +15,8 @@ SMTP_PASSWORD = "your-password"
 EMAIL_FROM = "your-email@example.com"
 EMAIL_TO = "your-email@example.com"
 
-
-# In[3]:
-
-
 # Configure logging
 logging.basicConfig(filename="polling_scraper.log", level=logging.ERROR)
-
-
-# In[5]:
-
 
 # Function to send email notifications for errors
 def send_error_email(subject, message):
@@ -52,9 +34,6 @@ def send_error_email(subject, message):
         server.quit()
     except Exception as e:
         logging.error(f"Failed to send error email: {str(e)}")
-
-
-# In[2]:
 
 
 # Function to scrape polling data from the webpage
@@ -130,9 +109,6 @@ def scrape_polling_data(url):
         return None
 
 
-# In[6]:
-
-
 # Function to calculate the 7-day rolling average
 def calculate_rolling_average(data, window=7):
     return data.rolling(window=window).mean()
@@ -167,9 +143,6 @@ def generate_trends_dataframe(poll_data):
     
     trends_df.reset_index(inplace=True)
     return trends_df
-
-
-# In[8]:
 
 
 # Function to generate CSV files
