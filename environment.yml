@@ -1,4 +1,4 @@
-name: econ
+name: lmoses-scraper
 channels:
   - defaults
   - conda-forge
