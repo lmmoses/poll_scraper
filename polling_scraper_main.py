@@ -1,26 +1,14 @@
-
-# coding: utf-8
-
-# In[2]:
-
-
 import pandas as pd
 from datetime import datetime
 from polling_scraper_functions_v2 import scrape_polling_data, generate_trends_dataframe
 
-
-# In[3]:
-
-
 # Define the URL of the polling page
-polling_url = "https://cdn-dev.economistdatateam.com/jobs/pds/code-test/index.html"
+POLLING_URL = "https://cdn-dev.economistdatateam.com/jobs/pds/code-test/index.html"
 
-
-# In[6]:
 
 
 if __name__ == "__main__":
-    polling_data = scrape_polling_data(polling_url)
+    polling_data = scrape_polling_data(POLLING_URL)
     
     polling_data.to_csv('polls.csv')
     
